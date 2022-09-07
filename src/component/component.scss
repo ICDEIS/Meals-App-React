@@ -1,0 +1,215 @@
+
+
+$m-green: rgb(141, 217, 75);
+
+.category-list {
+   display: grid;
+   grid-template-columns: repeat(1, minmax(0, 1fr));
+   gap: 5px;
+   padding: 5px 3%;
+}
+
+.category-item {
+   border: 1px solid $m-green;
+   border-radius: 8px;
+   padding: 5px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   img {
+      width: 100%;
+   }
+   h4 {
+      padding-top: 20px;
+   }
+   p {
+      flex-grow: 1;
+   }
+   a {
+      $link-color:  rgb(22, 115, 255);
+      display: inline-block;
+      background-color: $m-green;
+      text-align: center;
+      padding: 3px 10px;
+      margin-bottom: 5px;
+      border-radius: 3px;
+      color: white;
+
+      &:hover {
+         background-color: darken($m-green, 5%);
+         color: white;
+      }
+   }
+}
+.go-back-all-catg {
+   position: absolute;
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   background-color: $m-green;
+   color: white;
+   top: 90px;
+   padding: 5px 10px
+}
+
+.meals-list {
+   display: grid;
+   grid-template-columns: repeat(1, minmax(0, 1fr));
+   gap: 5px;
+   padding: 5px 3%;
+   margin-top: 50px;
+}
+.meals-item {
+   border: 1px solid $m-green;
+   border-radius: 8px;
+   padding: 5px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   img {
+      width: 100%;
+   }
+   h4 {
+      padding-top: 20px;
+      flex: 1;
+   }
+   a {
+      $link-color:  rgb(22, 115, 255);
+      display: inline-block;
+      background-color: $m-green;
+      text-align: center;
+      margin: 10px 0;
+      padding: 3px 10px;
+      margin-bottom: 5px;
+      border-radius: 3px;
+      color: white;
+      &:hover {
+         background-color: darken($m-green, 5%);
+         color: white;
+      }
+   }
+}
+.meal-details {
+   max-width: 800px;
+   margin-top: 40px;
+   padding: 10px 3%;
+   .meal-img {
+      padding: 15px 0;
+      img {
+         width: 100%;
+         max-width: 700px;
+         border-radius: 5px;
+         padding-bottom: 10px;
+      }
+   }
+   .youtube-link {
+      background-color: rgb(125, 202, 57);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+      &:hover {
+         color: white;
+         background-color: darken($m-green, 5%);
+         text-decoration: underline;
+      }
+   }
+   h5 {
+      padding: 0 15px
+   }
+   hr {
+      width: 70%;
+   }
+   .ingredients-list {
+      animation: .3s less ease;
+      transition: all 4s ease;
+      li {
+         position: relative;
+         padding-bottom: 3px;
+         span {
+            position: absolute;
+            left: 50%;
+         }
+      }
+   }
+}
+.search-meal {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 20px;
+   input {
+      width: 65%;
+      border: 1px solid $m-green;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 17px;
+      &:focus {
+         outline: none;
+         box-shadow: 0 0 3px 1px $m-green;
+      }
+   }
+   button {
+      border: none;
+      font-size: 17px;
+      padding: 5.5px 8px;
+      background-color: $m-green;
+      color: white;
+      margin-left: 5px;
+      border-radius: 5px;
+      &:hover {
+         background-color: darken($m-green, 5%);
+      }
+   }
+}
+
+@media (min-width: 600px) {
+   .category-list, .meals-list {
+      padding: 10px 10%;
+   }
+   .meal-list {
+      padding: 10px 10%;
+   }
+}
+@media (min-width: 800px) {
+   .category-list, .meals-list {
+      padding: 10px 3%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+   .meal-list .meals-list {
+      padding: 10px 3%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+}
+@media (min-width: 1000px) {
+   .category-list, .meals-list {
+      padding: 10px 8%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+}
+@media (min-width: 1100px) {
+   .category-list, .meals-list {
+      padding: 10px 3%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+   }
+}
+@media (min-width: 1300px) {
+   .category-list, .meals-list {
+      padding: 10px 8%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+   }
+}
+
+
+@keyframes less {
+   0% {
+      display: none;
+      opacity: 0;
+      height: 0;
+      transform: translatey(100%);
+   }
+   100% {
+      opacity: 1;
+      height: 100%;
+      transform: translatey(0);
+   }
+}
